@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>custom video player</title>
+<style>
+/* yay css */
+
+
+
+
+</style>
+	</head>
+	<body>
+		<div class='player'>
+			<video class='player_video viewer' src='652333414'></video>
+			<div class='player_controls'>
+				<div class='progress'>
+					<div class='progress_filled'></div>
+				</div>
+				<button class='player_button toggle' title='Toggle Play'>Hi</button>
+				<input type='range' name='volume' class='player_slider' min='0' max='1' step='0.05' value='1'>
+				<!-- more inputs to come -->
+
+			</div>
+		</div>
+
+<script>
+/* yay js */
+
+
+
+</script>
+
+	</body>
+</html>
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Array Cardio Day</title>
+<style>
+
+html{
+  font-size: 10px;
+  font-family: monospace;
+}
+
+body{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  background: #efefef;
+}
+
+.log_box{
+  background: #aaeeff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+  
+
+
+
+</style>
+  </head>
+  <body>
+    <div class='log_box'>
+      <h1>console.log('bro');</h1>
+    </div>
+  <script>
+
+const batters = [
+  {first: 'Mookie', last: 'Betts', team: 'BOS', ab: 520, h:180, hr:32},
+  {first: 'J.D.', last: 'Martinez', team: 'BOS', ab: 569, h:188, hr: 43}, 
+  {first: 'Christian', last: 'Yelich', team: 'MIL', ab: 574, h:187, hr: 36}, 
+  {first: 'Jose', last: 'Altuve', team: 'HOU', ab: 534, h:169, hr: 13}, 
+  {first: 'Mike', last: 'Trout', team: 'LAA', ab: 471, h:147, hr: 39},
+  {first: 'Scooter', last: 'Gennett', team: 'CIN', ab: 584, h:181, hr: 23},
+  {first: 'Freddie', last: 'Freeman', team: 'ATL', ab: 618, h:191, hr: 23}, 
+  {first: 'Michael', last: 'Brantley', team: 'CLE', ab: 570, h:176, hr: 17}, 
+  {first: 'Anthony', last: 'Rendon', team: 'WSH', ab: 529, h:163, hr: 24},
+  {first: 'Lorenzo', last: 'Cain', team: 'MIL', ab: 539, h:166, hr: 10}
+  ];
+
+// FILTER the names of players with 30 or more homeruns
+// pass a function that returns a boolean whether or not we should keep it
+const power_houses = batters.filter(batter => (batter.hr >= 30));
+console.table(power_houses);
+
+// MAP the array to a 1:1 array of properly formatted first and last names
+const full_names = batters.map(batter => `${batter.first} ${batter.last}`);
+console.log(full_names)
+
+// SORT the array in order of homeruns then hits
+const ordered = batters.sort((a, b) => a.hr < b.hr ? 1 : -1);
+console.table(ordered);
+
+// REDUCE calc sum of hits
+const total_hits = batters.reduce((hits, batter) => {
+  return hits + batter.h;
+}, 0);
+
+console.log(total_hits);
+
+// SORT to alphabetize by last name
+const alphabatta = batters.sort((a, b) => {
+  return a.last < b.last ? -1 : 1;
+});
+
+console.table(alphabatta);
+
+// MAP calc batting average of each player
+const batting_averages = batters.map((batter) => {
+  return (batter.h / batter.ab).toFixed(3);
+});
+
+console.log(batting_averages);
+
+  </script>
+  </body>
+</html>
+
